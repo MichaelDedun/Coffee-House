@@ -1,0 +1,619 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: black
+
+body
+	font-size: 1em
+	min-width: 320px
+	position: relative
+	line-height: 1.65em
+	font-family: $default-font
+	overflow-x: hidden
+	color: $main
+	background-color: #eee
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+h1, h2, h3, h4, h5, h6
+	font-family: $head-font
+.text-center
+	text-align: center
+.text-right
+	text-align: right
+.text-left
+	text-align-last: auto
+.content
+	position: relative
+	left: 0
+	transition: 1s ease
+b, strong
+	font-weight: bold
+a
+	color: $main
+	padding: 5px 13px
+	transition: all 0.6s ease
+	border: 1px solid transparent
+	&:hover
+		border-radius: 20px
+		border: 1px solid $sec
+		text-decoration: none
+		color: $sec
+.panda
+	width: 45px
+	height: 45px
+.darkTheme
+	background-color: rgba(0, 0, 0, .65)
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+section
+	padding: 70px 0
+	.sectionHeader
+		h2
+			font-size: 2em
+			line-height: 2em
+		hr
+			height: 3px
+			width: 100px
+			margin: 0 auto
+			background-color: $sec
+			border: none
+		p
+			width: 60%
+			font-size: 1.2em
+			line-height: 1.4em
+			margin: 20px auto 80px auto
+.btnToUp
+	opacity: 0
+	position: fixed
+	bottom: 50px
+	left: 50px
+	width: 50px
+	height: 50px
+	background-color: rgba(145, 93, 66, 0.3)
+	border-radius: 50%
+	z-index: 2
+	border: none
+	&:hover
+		border: none
+		background-color: rgba(145, 93, 66, 0.5)
+	svg
+		position: absolute
+		left: 10px
+		top: 10px
+		width: 30px
+		height: 30px
+.activeUp
+	opacity: 1
+///////////Styles for OutSlideMenu////////////
+#outSlideMenu
+	padding: 30px
+	position: fixed
+	top: 0
+	left: -300px
+	height: 100vh
+	width: 300px
+	background-color: silver
+	transition: 1s ease
+	z-index: 10
+	.close
+		border: none
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 40px
+		height: 40px
+		position: absolute
+		top: 30px
+		right: 20px
+		span
+			display: block
+			width: 30px
+			height: 3px	
+			margin: auto
+			background-color: white
+			transform: rotate(45deg)
+			&::before
+				content: ''
+				display: block
+				background-color: white
+				width: 30px
+				height: 3px
+				transform: rotate(90deg)
+	.outSlideLogo
+		margin: 10px 0 50px 0
+	.outSlideNav
+		position: relative
+		ul
+			padding: 0
+			list-style: none
+			li
+				margin-bottom: 15px
+				a
+					padding: 5px 13px
+					letter-spacing: 1.5px
+					font-size: 1.1em
+					font-weight: 600
+					line-height: 22px
+					color: $main
+					&:hover
+						cursor: pointer
+						color: $sec
+			.toggleMenu
+				transition: all 0.6s ease
+				position: relative
+				left: 20px
+				ul
+					display: none
+					li
+						a
+							color: white
+							&:hover
+								color: $sec
+
+	.MakerInfo
+		position: absolute
+		bottom: 30px
+		left: 30px
+		p
+			font-size: 1.1em
+			font-weight: 500
+			a
+				font-style: italic
+				text-decoration: underline
+				color: black
+				&:hover
+					color: $sec
+///////////Styles for Header//////////////
+header
+	position: fixed
+	padding: 25px 0
+	width: 100%
+	background-color: #d6bfaf
+	box-shadow: 0 0 10px rgba(0, 0, 0, .7)
+	z-index: 10
+	.topLine
+		height: 40px
+		.Navigation
+			ul
+				list-style: none
+				padding: 7.5px 0 0 0
+				li
+					display: inline-block
+					margin-right: 25px
+					a
+						letter-spacing: 1.5px
+						font-size: 1.1em
+						line-height: 1.375em
+						font-weight: 600
+						cursor: pointer
+						&:hover
+							color: $sec
+			.toggleMenu
+				position: relative
+				ul
+					width: 160px
+					position: absolute
+					top: 15px
+					right: 120px
+					background-color: #d6bfaf
+					text-align: center
+					border: 1px solid transparent
+					border-top: 0
+					border-bottom-right-radius: 20%
+					border-bottom-left-radius: 20%
+					box-shadow: 0 8px 10px rgba(0, 0, 0, .7)
+					transition: all 1s ease
+					display: none
+					li
+						display: block
+						margin: 0 0 10px 0
+		.headerButtons
+			padding-top: 5px
+			text-align: right
+			#search
+				display: inline-block
+				margin-right: 10px
+				svg
+					width: 30px
+					height: 30px
+			#burgerButtonMnu
+				position: relative
+				display: inline-block
+				border: none
+				width: 30px
+				height: 30px
+				cursor: pointer
+				span
+					height: 4px
+					width: 30px
+					position: absolute
+					left: 0
+					display: block
+					background-color: black
+					z-index: 5
+					transition: 0.6s ease
+				&:hover
+					span
+						background-color: $sec
+////////////////////Styles for Home////////////////
+#Home
+	position: relative
+	min-height: 100vh
+	background: url('../img/Header/HeaderBG.jpg') center top no-repeat
+	background-size: cover
+	.FirstScreenInfo
+		padding-top: 230px
+		h1
+			color: white
+			font-size: 4em
+			i
+				text-transform: uppercase
+		p
+			font-size: 1.3em
+			line-height: 1.5em
+			color: white
+			width: 50%
+			margin: 30px auto 100px auto
+		.toBottom
+			display: block
+			padding: 0
+			width: 40px
+			height: 40px
+			border-radius: 50%
+			background-color: $sec
+			margin: 0 auto
+			position: relative
+			cursor: pointer
+			span
+				display: block
+				position: absolute
+				background-color: white
+				height: 1px
+				width: 10px
+				margin: 20px 10px
+				transform: rotate(45deg)
+				transition: all 0.6s ease
+				&:last-child
+					margin: 20px 18px
+					transform: rotate(-45deg)
+			&:hover
+				background-color: #7a5b45
+				span
+					background-color: black
+/////////////////Styles for Feature////////////////
+#Feature
+	.feature
+		width: 100%
+		svg
+			width: 50px
+			height: 50px
+			margin-bottom: 10px
+		h4
+			font-size: 1.5em
+		p
+			font-size: 1.2em
+	.activeFeature
+		h4, p
+			color: $sec
+
+///////////////Styles for bestSlider////////////
+#bestSlider
+	background-color: $white
+	.bestSlide
+		height: 550px
+		img
+			height: 100%
+			width: 100%
+		h5
+			font-size: 2em
+		p
+			font-size: 1.2em
+			line-height: 1.3em
+	a
+		position: absolute
+		top: 45%
+		display: flex
+		align-items: center
+		width: 60px
+		height: 60px
+		position: absolute
+		&:hover
+			background-color: rgba(145, 93, 66, 0.9)
+////////////////Styles for achievements////////////
+#achievements
+	padding: 10px 0
+	background: url("../img/Achievements/Background.png") center top no-repeat
+	background-size: cover
+	.item
+		text-align: center
+		img
+			margin: 20px 0
+		h3
+			color: $white
+			font-size: 3em
+			font-weight: 100
+			opacity: 0
+		.viz
+			opacity: 1
+			transition: all 1s ease
+		p
+			color: #c7b299
+			font-size: 0.9em
+			font-weight: 300
+			text-transform: uppercase
+		hr
+			margin: 0 auto
+			background-color: #fff
+			width: 20%
+			margin-bottom: 20px
+/////////////Styles for Clients////////
+#Clients
+	background-color: white
+	position: relative
+	color: $white
+	hr
+		background-color: $white
+	img
+		display: block
+		width: 200px
+		height: 200px
+///////////////Styles for footer//////////////
+footer
+	background-color: #d6bfaf
+	position: relative
+	padding: 20px 0
+	display: flex
+	justify-content: center
+	p
+		font-size: 1.5em
+		font-weight: 600
+/////////////////////////Styles for PAGE FEEDBACK////////
+#newFeedBack
+	position: fixed
+	bottom: 50px
+	left: 50px
+	width: 50px
+	height: 50px
+	background-color: rgba(145, 93, 66, 0.3)
+	border-radius: 50%
+	z-index: 2
+	border: none
+	transition: 0.4s
+	cursor: pointer
+	&:hover
+		border: none
+		background-color: rgba(145, 93, 66, 0.7)
+	svg
+		position: absolute
+		left: 10px
+		top: 10px
+		width: 30px
+		height: 30px
+#FirstScreenFeedBack
+	position: relative
+	min-height: 150vh
+	padding: 100px
+	.sectionHeader
+		color: #fff
+	.feedBack
+		background-color: rgba(0, 0, 0, 0.8)
+		display: block
+		width: 90%
+		min-height: 200px
+		border-radius: 20%
+		padding: 30px
+		margin: 30px 0
+		h4
+			font-size: 1.8em
+			color: $sec
+			margin-bottom: 10px
+		p
+			color: white
+//////////////Styles for modal wondow in FEEDBACK////////////////////
+.modal
+	.modal-content
+		background-color: rgb(145, 93, 66)
+		.modal-header
+			color: #fff
+		.modal-body
+			input[type=text], textarea
+				width: 100%
+				display: block
+				border-radius: 10px
+				margin-bottom: 20px
+				padding: 10px
+				border: none
+				transition: 0.6s
+				&:hover, &:focus
+					box-shadow: 0 0 10px white
+		.modal-footer
+			.modal-send
+				border: none
+				background-color: white
+				color: $dark
+				border-radius: 10px
+				font-weight: 700
+				cursor: pointer
+				transition: 0.6s
+				&:hover, &:focus
+					color: black
+					box-shadow: 0 0 10px white
+///////////////Styles for Action/////////////
+#FirstScreenMenu
+	background: url('../img/Header/HeaderBG.jpg') center top no-repeat
+	background-size: cover
+	padding-bottom: 0
+	section
+		padding: 50px 0
+		.sectionHeader
+			p
+				margin: 20px auto 20px auto
+	.wrapper
+		padding-top: 90px
+		ul
+			position: relative
+			list-style: none
+			li
+				display: inline-block
+				margin: 10px
+				transition: all 1s ease
+				a
+					display: block
+					background-color: $sec
+					border: 3px solid $sec
+					padding: 0 40px
+					letter-spacing: 1.5px
+					font-size: 1.2em
+					line-height: 2.4em
+					font-weight: 600
+					color: #fff
+					border: none
+					&:hover
+						color: black
+		.sectionHeader
+			color: white
+		.menuPoint
+			padding: 0
+			background-color: silver
+			border: 3px solid $sec
+			border-radius: 10px
+			margin-bottom: 20px
+			.menuPointPhoto
+				margin-bottom: 15px
+				img
+					display: block
+					width: 100%
+					border-top-right-radius: 7px
+					border-top-left-radius: 7px
+			.menuPointInfo
+				h4
+					text-align: center
+					font-size: 1.4em
+					line-height: 1em
+				p
+					text-align: center
+					font-size: 1em
+					line-height: 1.2em
+				.value, .having
+					display: inline-block
+					width: 45%
+					font-size: 1em
+					line-height: 1.2em
+					color: $sec
+					b
+						color: $dark
+				.having
+					width: 50%
+////////////////////////Styels for ACTION///////////////////
+#FirstScreenAction
+	padding: 100px 0
+	ul
+		list-style: none
+		li
+			display: inline-block
+			margin: 10px
+			transition: all 1s ease
+			a
+				display: block
+				background-color: $sec
+				border: 3px solid $sec
+				padding: 0 40px
+				letter-spacing: 1.5px
+				font-size: 1.2em
+				line-height: 2.4em
+				font-weight: 600
+				color: #fff
+				border: none
+				&:hover
+					color: black
+	#newAction, #oldAction
+		h3
+			font-size: 1.8em
+			color: $sec
+			margin-bottom: 30px
+	#oldAction
+		margin-top: 50px
+	.someAction
+		background-color: white
+		width: 95%
+		min-height: 20vh
+		margin: 0 2.5% 30px 2.5%
+		box-shadow: 2px 2.5px 5px $sec
+		.photoAction
+			img
+				width: 100%
+		.infoAction
+			padding: 0 20px 10px 20px
+			h3
+				font-size: 1.6em
+				margin: 15px 0
+			p
+				font-size: 1.1em
+				line-height: 1.2em
+		&:hover
+			box-shadow: 0 0 20px silver
+////////////////////////Styles for MAIL///////////////
+#FirstScreenMail
+	position: relative
+	color: white
+	padding-top: 120px
+	.iconFeedBack
+		margin: 0 auto
+		background-color: $sec
+		border-radius: 50%
+		width: 100px
+		height: 100px
+		display: flex
+		justify-content: center
+		align-items: center
+	h5
+		margin: 30px 0 60px 0
+		width: 80%
+		margin-left: 10%
+		font-size: 1.25em
+		font-weight: 590
+		line-height: 1.5em
+	form
+		input[type=text], textarea
+			width: 100%
+			border-radius: 10px
+			padding: 15px
+			margin-bottom: 30px
+			font-size: 1.25em
+			font-weight: 500
+			line-height: 1.75em
+			transition: 0.6s ease
+			&:hover, &:focus
+				box-shadow: 0 0 25px rgba(255, 255, 255, 0.35)
+			&:focus
+				border: 1px solid rgba(0, 0, 0, .9)
+		input[type=submit]
+			width: 220px
+			height: 70px
+			background-color: white
+			border-radius: 10px
+			font-family: $main
+			font-size: 1.25em
+			line-height: 1.375em
+			text-transform: uppercase
+			transition: 1s ease
+			&:hover
+				cursor: pointer
+				border-color: $sec
+				background-color: rgba(0, 0, 0, .8)
+				color: $sec
+@import "media" // Always at the end
